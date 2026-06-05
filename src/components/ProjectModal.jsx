@@ -20,11 +20,10 @@ export default function ProjectModal({ project, onClose }) {
           exit={{ opacity: 0, scale: 0.9, y: 20 }}
           transition={{ type: "spring", damping: 25, stiffness: 300 }}
           onClick={(e) => e.stopPropagation()}
-          className="relative w-full max-w-2xl max-h-[85vh] overflow-y-auto rounded-2xl bg-white dark:bg-dark-2 shadow-2xl border border-slate-200 dark:border-slate-700"
+          className="relative w-full max-w-2xl max-h-[85vh] overflow-y-auto rounded-2xl bg-white shadow-2xl border border-slate-200"
         >
-          <button
-            onClick={onClose}
-            className="absolute top-4 right-4 z-10 p-2 rounded-full bg-white/80 dark:bg-dark-3/80 text-slate-600 dark:text-slate-300 hover:bg-white dark:hover:bg-dark-3 transition-all"
+          <button onClick={onClose} type="button" aria-label="Close project details"
+            className="absolute top-4 right-4 z-10 p-2 rounded-full bg-white/80 text-slate-600 hover:bg-white transition-all"
           >
             <FiX size={18} />
           </button>
@@ -36,10 +35,10 @@ export default function ProjectModal({ project, onClose }) {
           </div>
 
           <div className="p-6 sm:p-8">
-            <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-3">
+            <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">
               {project.title}
             </h3>
-            <p className="text-sm sm:text-base text-slate-500 dark:text-slate-400 leading-relaxed mb-6">
+            <p className="text-sm sm:text-base text-slate-500 leading-relaxed mb-6">
               {project.description}
             </p>
 
@@ -47,14 +46,14 @@ export default function ProjectModal({ project, onClose }) {
               <div className="space-y-4 mb-6">
                 {project.challenges && (
                   <div>
-                    <h4 className="text-sm font-semibold text-slate-900 dark:text-white mb-2">Challenges</h4>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">{project.challenges}</p>
+                    <h4 className="text-sm font-semibold text-slate-900 mb-2">Challenges</h4>
+                    <p className="text-sm text-slate-500">{project.challenges}</p>
                   </div>
                 )}
                 {project.outcome && (
                   <div>
-                    <h4 className="text-sm font-semibold text-slate-900 dark:text-white mb-2">Outcome</h4>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">{project.outcome}</p>
+                    <h4 className="text-sm font-semibold text-slate-900 mb-2">Outcome</h4>
+                    <p className="text-sm text-slate-500">{project.outcome}</p>
                   </div>
                 )}
               </div>

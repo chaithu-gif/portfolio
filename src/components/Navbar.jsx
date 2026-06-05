@@ -69,12 +69,12 @@ export default function Navbar() {
                 );
               })}
               {admin ? (
-                <button onClick={logout}
+                <button onClick={logout} type="button"
                   className="ml-3 flex items-center gap-1.5 px-3 py-2 text-sm font-medium rounded-lg text-slate-500 hover:text-red-500 hover:bg-red-50 transition-all">
                   <FiLogOut size={15} /> Logout
                 </button>
               ) : (
-                <button onClick={() => setLoginOpen(true)}
+                <button onClick={() => setLoginOpen(true)} type="button" aria-label="Admin login"
                   className="ml-3 p-2 rounded-lg text-slate-400 hover:text-primary hover:bg-primary/5 transition-all">
                   <FiLock size={16} />
                 </button>
@@ -83,15 +83,15 @@ export default function Navbar() {
 
             <div className="flex items-center gap-1 md:hidden">
               {admin ? (
-                <button onClick={logout} className="p-2 rounded-lg text-slate-400 hover:text-red-500">
+                <button onClick={logout} type="button" aria-label="Logout" className="p-2 rounded-lg text-slate-400 hover:text-red-500">
                   <FiLogOut size={18} />
                 </button>
               ) : (
-                <button onClick={() => setLoginOpen(true)} className="p-2 rounded-lg text-slate-400">
+                <button onClick={() => setLoginOpen(true)} type="button" aria-label="Admin login" className="p-2 rounded-lg text-slate-400">
                   <FiLock size={18} />
                 </button>
               )}
-              <button onClick={() => setMenuOpen(!menuOpen)} className="p-2 rounded-lg text-slate-400">
+              <button onClick={() => setMenuOpen(!menuOpen)} type="button" aria-label={menuOpen ? "Close menu" : "Open menu"} className="p-2 rounded-lg text-slate-400">
                 {menuOpen ? <HiX size={22} /> : <HiMenu size={22} />}
               </button>
             </div>

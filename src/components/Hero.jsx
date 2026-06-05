@@ -74,15 +74,15 @@ export default function Hero() {
 
             <motion.div variants={itemVariants}
               className="flex items-center gap-3 sm:gap-4 justify-center lg:justify-start">
-              <a href="https://github.com/chaithu-gif" target="_blank" rel="noopener noreferrer"
+              <a href="https://github.com/chaithu-gif" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"
                 className="p-2.5 sm:p-3 rounded-xl bg-slate-100 text-slate-500 hover:bg-primary/10 hover:text-primary transition-all active:scale-90">
                 <FiGithub size={18} />
               </a>
-              <a href="https://linkedin.com/in/chaithanyadk" target="_blank" rel="noopener noreferrer"
+              <a href="https://linkedin.com/in/chaithanyadk" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"
                 className="p-2.5 sm:p-3 rounded-xl bg-slate-100 text-slate-500 hover:bg-primary/10 hover:text-primary transition-all active:scale-90">
                 <FiLinkedin size={18} />
               </a>
-              <a href="mailto:chaithanyadk.07@gmail.com"
+              <a href="mailto:chaithanyadk.07@gmail.com" aria-label="Send email"
                 className="p-2.5 sm:p-3 rounded-xl bg-slate-100 text-slate-500 hover:bg-primary/10 hover:text-primary transition-all active:scale-90">
                 <FiMail size={18} />
               </a>

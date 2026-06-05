@@ -466,7 +466,7 @@ export default function EditModal({ section, open, onClose }) {
                   {msg}
                 </span>
               )}
-              <button onClick={onClose} className="p-1.5 rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-100">
+              <button onClick={onClose} type="button" aria-label="Close edit panel" className="p-1.5 rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-100">
                 <FiX size={18} />
               </button>
             </div>

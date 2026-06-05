@@ -43,7 +43,7 @@ export default function LoginModal({ open, onClose }) {
             onClick={(e) => e.stopPropagation()}
             className="relative w-full max-w-sm bg-white rounded-2xl shadow-2xl border border-slate-200 p-6"
           >
-            <button onClick={onClose} className="absolute top-4 right-4 p-1.5 rounded-lg text-slate-400 hover:text-slate-600">
+            <button onClick={onClose} type="button" aria-label="Close login dialog" className="absolute top-4 right-4 p-1.5 rounded-lg text-slate-400 hover:text-slate-600">
               <FiX size={16} />
             </button>
 
