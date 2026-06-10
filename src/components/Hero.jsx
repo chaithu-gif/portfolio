@@ -62,8 +62,14 @@ Hi, I'm
               className="flex flex-wrap items-center gap-3 sm:gap-4 justify-center lg:justify-start mb-8">
               <a href="#projects" className="btn-primary text-sm sm:text-base">View Projects <FiArrowRight /></a>
               <a href="#contact" className="btn-outline text-sm sm:text-base">Contact Me</a>
-              <a href="#resume" className="btn-outline text-sm sm:text-base"><FiDownload /> Resume</a>
-            </motion.div>
+<a
+  href={hero.resumeUrl}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="btn-outline text-sm sm:text-base"
+>
+  <FiDownload /> Resume
+</a>            </motion.div>
 
             <motion.div variants={itemVariants}
               className="flex flex-wrap items-center gap-4 sm:gap-6 justify-center lg:justify-start text-xs sm:text-sm text-slate-500 mb-6">
@@ -71,21 +77,7 @@ Hi, I'm
               <span className="flex items-center gap-1.5"><FiCalendar className="text-primary" size={14} /> B.E CSE · 2024-2028</span>
             </motion.div>
 
-            <motion.div variants={itemVariants}
-              className="flex items-center gap-3 sm:gap-4 justify-center lg:justify-start">
-              <a href="https://github.com/chaithu-gif" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"
-                className="p-2.5 sm:p-3 rounded-xl bg-slate-100 text-slate-500 hover:bg-primary/10 hover:text-primary transition-all active:scale-90">
-                <FiGithub size={18} />
-              </a>
-              <a href="https://linkedin.com/in/chaithanyadk" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"
-                className="p-2.5 sm:p-3 rounded-xl bg-slate-100 text-slate-500 hover:bg-primary/10 hover:text-primary transition-all active:scale-90">
-                <FiLinkedin size={18} />
-              </a>
-              <a href="mailto:chaithanyadk.07@gmail.com" aria-label="Send email"
-                className="p-2.5 sm:p-3 rounded-xl bg-slate-100 text-slate-500 hover:bg-primary/10 hover:text-primary transition-all active:scale-90">
-                <FiMail size={18} />
-              </a>
-            </motion.div>
+            
 
             <motion.div variants={itemVariants}
               className="flex flex-wrap items-center gap-6 sm:gap-10 mt-8 justify-center lg:justify-start">

@@ -38,23 +38,12 @@ export default function Skills() {
               </h3>
               <div className="space-y-4">
                 {category.skills.map((skill, si) => (
-                  <div key={skill.name}>
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-xs sm:text-sm font-medium text-slate-700">{skill.name}</span>
-                      <span className="text-[11px] font-mono text-slate-400">{skill.level}%</span>
-                    </div>
-                    <div className="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1, delay: 0.2 }}
-                        className="h-full rounded-full gradient-bg relative"
-                      >
-                        <div className="absolute inset-0 bg-white/20 rounded-full animate-shimmer" />
-                      </motion.div>
-                    </div>
-                  </div>
+                  <div
+  key={skill.name}
+  className="px-3 py-2 rounded-lg bg-slate-100 text-slate-700 text-sm font-medium"
+>
+  {skill.name}
+</div>
                 ))}
               </div>
             </motion.div>

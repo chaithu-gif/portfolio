@@ -49,6 +49,7 @@ const sectionConfigs = {
       { key: "tagline", label: "Tagline" },
       { key: "subtitle", label: "Subtitle" },
       { key: "bio", label: "Bio", type: "textarea" },
+      { key: "resumeUrl", label: "Resume URL", type: "text" },
     ],
     subItems: {
       key: "highlights",

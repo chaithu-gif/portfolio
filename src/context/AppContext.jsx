@@ -13,6 +13,7 @@ const defaults = {
     tagline: "CSE Student & Full Stack Developer",
     subtitle: "I build things for the web",
     bio: "A passionate Computer Science Engineering student at BMS College of Engineering, dedicated to crafting modern, scalable web applications with clean code and exceptional user experiences.",
+    resumeUrl: "/resume.pdf",
     highlights: [
       { label: "Projects", value: 3, suffix: "+" },
       { label: "Certifications", value: 3, suffix: "+" },
