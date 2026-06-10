@@ -1,4 +1,7 @@
+import { doc, getDoc,updateDoc } from "firebase/firestore";
+import { db } from "../firebase";
 import { createContext, useContext, useState, useCallback, useEffect } from "react";
+//get doc-read document ,doc()-refernece to the document and db- database connection
 
 const STORAGE_KEY = "portfolio_data";
 const ADMIN_USER = "admin";
@@ -120,8 +123,42 @@ function loadData() {
 const AppContext = createContext(null);
 
 export function AppProvider({ children }) {
-const [data, setData] = useState(loadData);  const [admin, setAdmin] = useState(() => sessionStorage.getItem("admin_logged_in") === "true");
+const [data, setData] = useState(defaults);  
+const [admin, setAdmin] = useState(() => sessionStorage.getItem("admin_logged_in") === "true");
+useEffect(() => {
+  async function fetchPortfolio() {
+    try {
+      const docRef = doc(db, "portfolio", "main");
+      const docSnap = await getDoc(docRef);
 
+     if (docSnap.exists()) {
+  const firebaseData = docSnap.data();
+
+  setData((prev) => ({
+    ...prev,
+    hero: {
+      ...prev.hero,
+      ...firebaseData.hero,
+    },
+     about: {
+    ...prev.about,
+    ...firebaseData.about,
+  },
+  skills: firebaseData.skills || prev.skills,
+   projects: firebaseData.projects || prev.projects,
+  experience: firebaseData.experience || prev.experience,
+  coding: firebaseData.coding || prev.coding,
+  contact: firebaseData.contact || prev.contact,
+  resume: firebaseData.resume || prev.resume,
+  }));
+}
+    } catch (error) {
+      console.error("Firestore Error:", error);
+    }
+  }
+
+  fetchPortfolio();
+}, []);
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
   }, [data]);
@@ -140,11 +177,25 @@ const [data, setData] = useState(loadData);  const [admin, setAdmin] = useState(
     sessionStorage.removeItem("admin_logged_in");
   }, []);
 
-  const updateData = useCallback((section, value) => {
-    if (!admin) return;
-    setData((prev) => ({ ...prev, [section]: value }));
-  }, [admin]);
+  const updateData = useCallback(async (section, value) => {
+  if (!admin) return;
 
+  try {
+    const docRef = doc(db, "portfolio", "main");
+
+    await updateDoc(docRef, {
+      [section]: value,
+    });
+
+    setData((prev) => ({
+      ...prev,
+      [section]: value,
+    }));
+
+  } catch (error) {
+    console.error("Update Error:", error);
+  }
+}, [admin]);
   const resetData = useCallback(() => {
     if (!admin) return;
     setData(defaults);

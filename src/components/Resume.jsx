@@ -98,29 +98,7 @@ export default function Resume() {
                 </div>
               </div>
 
-              <div className="lg:col-span-2">
-                <div className="relative">
-                  <div className="w-full aspect-[7/10] rounded-xl overflow-hidden gradient-bg p-1 shadow-xl shadow-primary/10">
-                    <div className="w-full h-full rounded-lg bg-white flex items-center justify-center">
-                      <div className="text-center px-4 sm:px-6">
-                        <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full gradient-bg flex items-center justify-center mx-auto mb-3 sm:mb-4 shadow-lg shadow-primary/20">
-                          <span className="text-2xl sm:text-3xl font-bold text-white">C</span>
-                        </div>
-                        <h3 className="font-bold text-slate-900 text-base sm:text-lg">Chaithanya D K</h3>
-                        <p className="text-[11px] sm:text-xs text-slate-500 mb-3 sm:mb-4">CSE Student · Full Stack Developer</p>
-                        <div className="space-y-1.5 sm:space-y-2 text-left">
-                          {[["Education", "B.E CSE"], ["University", "BMS College"], ["Year", "2024 - 2028"], ["Projects", "3+"]].map(([l, v]) => (
-                            <div key={l} className="flex justify-between text-[11px] sm:text-xs py-1 border-b border-slate-200 last:border-0">
-                              <span className="text-slate-500">{l}</span>
-                              <span className="text-slate-700 font-medium">{v}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+        
             </div>
           </div>
         </div>

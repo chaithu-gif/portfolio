@@ -42,7 +42,16 @@ export default function Experience() {
                     <FiAward size={11} />
                   </div>
                   <div className="card p-4 sm:p-5">
-                    <div className="flex items-center justify-between gap-3">
+
+  {cert.image && (
+    <img
+      src={cert.image}
+      alt={cert.title}
+      className="w-full h-48 object-cover rounded-lg mb-4 border"
+    />
+  )}
+
+  <div className="flex items-center justify-between gap-3">
                       <div className="min-w-0 flex-1">
                         <p className="font-semibold text-slate-900 text-sm">{cert.title}</p>
                         <p className="text-xs text-slate-500 mt-0.5">{cert.issuer}</p>

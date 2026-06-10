@@ -40,19 +40,26 @@ export default function Hero() {
         )}
 
         <motion.div variants={containerVariants} initial="hidden" animate="visible"
-          className="flex flex-col-reverse lg:flex-row items-center gap-10 lg:gap-20">
-          <div className="flex-1 text-center lg:text-left">
+className="flex flex-col-reverse lg:flex-row items-center lg:items-start gap-10 lg:gap-20">          <div className="flex-1 text-center lg:text-left">
             <motion.p variants={itemVariants}
               className="text-primary font-semibold text-xs sm:text-sm tracking-[0.2em] uppercase mb-4">
               {hero.tagline}
             </motion.p>
 
-            <motion.h1 variants={itemVariants}
-              className="text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-[1.1] mb-4 text-slate-900">
-              Hi, I'm <span className="gradient-text">{hero.name}</span>
-              <br />
-              <span className="text-2xl sm:text-3xl lg:text-4xl font-medium text-slate-400">{hero.subtitle}</span>
-            </motion.h1>
+            <motion.h1
+  variants={itemVariants}
+  className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-slate-900"
+>
+Hi, I'm
+<br />
+<span className="gradient-text">{hero.name}</span></motion.h1>
+
+<motion.h2
+  variants={itemVariants}
+  className="text-xl sm:text-2xl lg:text-3xl font-semibold text-slate-500 mt-3 mb-6"
+>
+  {hero.subtitle}
+</motion.h2>
 
             <motion.p variants={itemVariants}
               className="text-base sm:text-lg text-slate-500 max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed">
@@ -92,7 +99,7 @@ export default function Hero() {
               className="flex flex-wrap items-center gap-6 sm:gap-10 mt-8 justify-center lg:justify-start">
               {hero.highlights.map((h) => (
                 <div key={h.label} className="text-center">
-                  <div className="text-2xl sm:text-3xl font-bold gradient-text">
+                  <div className="block mt-6 text-xl sm:text-2xl font-semibold text-slate-500">
                     <AnimatedCounter end={h.value} suffix={h.suffix} />
                   </div>
                   <div className="text-[11px] sm:text-xs text-slate-400 mt-0.5 uppercase tracking-wider">{h.label}</div>
@@ -136,7 +143,7 @@ export default function Hero() {
                 </div>
               </div>
               <div className="absolute -bottom-2 -right-2 sm:-bottom-3 sm:-right-3 w-14 h-14 sm:w-16 sm:h-16 rounded-2xl gradient-bg-alt flex items-center justify-center text-white font-bold text-xs sm:text-sm shadow-lg shadow-accent/25 animate-float">
-                Open to Work
+                Tech Enthusiast
               </div>
             </div>
           </motion.div>
