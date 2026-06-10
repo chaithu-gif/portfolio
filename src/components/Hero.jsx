@@ -19,8 +19,7 @@ export default function Hero() {
   const hero = data.hero;
   const [editOpen, setEditOpen] = useState(false);
 
-  const [profileImg] = useState(localStorage.getItem("profileImage") || null);
-
+const profileImg = hero.profileImage;
   return (
     <section id="hero" className="relative min-h-dvh flex items-center overflow-hidden pt-14">
       <div className="absolute inset-0 -z-10">
@@ -30,14 +29,7 @@ export default function Hero() {
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 w-full">
-        {admin && (
-          <div className="flex justify-end mb-4">
-            <button onClick={() => setEditOpen(true)}
-              className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-primary/10 text-primary text-sm font-medium hover:bg-primary/20 transition-all">
-              <FiEdit2 size={14} /> Edit Hero
-            </button>
-          </div>
-        )}
+        
 
         <motion.div variants={containerVariants} initial="hidden" animate="visible"
 className="flex flex-col-reverse lg:flex-row items-center lg:items-start gap-10 lg:gap-20">          <div className="flex-1 text-center lg:text-left">
